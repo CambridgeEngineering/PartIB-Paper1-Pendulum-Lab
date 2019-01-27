@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Double Pendulum
+Comment=Open double pendulum software
+Icon=/home/pi/pendulum_icon.png
+Exec=python3 /home/pi/DoublePendulumGUI.py
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;

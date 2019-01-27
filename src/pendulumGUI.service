@@ -1,0 +1,16 @@
+[Unit]
+Description=Start Double Pendulum Program
+
+[Service]
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+ExecStart=/usr/bin/python3 /home/pi/DoublePendulumGUI.py
+Restart=no
+RestartSec=5s
+KillMode=process
+TimeoutSec=infinity
+WorkingDirectory=/home/pi
+User=pi
+
+[Install]
+WantedBy=graphical.target
