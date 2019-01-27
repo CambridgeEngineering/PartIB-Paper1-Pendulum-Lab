@@ -47,10 +47,12 @@ Download the software from GitHub at
 
 <https://github.com/CambridgeEngineering/PartIB-Paper1-Pendulum-Lab>
 
+(use the 'Clone or download' button to download a zip file).
+
 Unzip the download, and run the installer
 
     unzip PartIB-Paper1-Pendulum-Lab-master.zip
     cd PartIB-Paper1-Pendulum-Lab-master/src
-    make install
+    sudo make install
 
 and reboot.
