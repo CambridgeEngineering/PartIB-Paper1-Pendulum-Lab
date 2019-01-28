@@ -886,6 +886,10 @@ different behaviour? ')
 		global crsids
 		messagebox.showinfo('Send Results by email', 'Sending results to the following crsids: {}'.format(', '.join(crsids)))
 
+		with open('.DoublePendulum.email') as gmail_info:
+			gmail_username = gmail_info.readline().strip()
+			gmail_password = gmail_info.readline().strip()
+
 		for crsid in crsids:
 			message = 'Dear {}\n\n\
 Attached are your results from the IB double pendulum lab. \n\n\
@@ -894,9 +898,9 @@ All the best, \n\n\
 Double Pendulum Lab'.format(crsid)
 			file_location = os.path.join('Double Pendulum Lab Data', crsid+'.csv')
 			try:
-				send_mail('doublependulumlab@gmail.com', crsid+'@cam.ac.uk', 'Double Pendulum Lab Results',
-						message, file_location, server='smtp.gmail.com', port=587, username='doublependulumlab',
-						password='Cha0ticM0ti0n')
+				send_mail(gmail_username+'@gmail.com', crsid+'@cam.ac.uk', 'Double Pendulum Lab Results',
+						message, file_location, server='smtp.gmail.com', port=587, username=gmail_username,
+						password=gmail_password)
 				messagebox.showinfo('Send Results by email', 'Data sent successfully to {}@cam.ac.uk!'.format(crsid))
 				os.remove(file_location)	#clears up after itself if email is sent successfully
 			except Exception as e:

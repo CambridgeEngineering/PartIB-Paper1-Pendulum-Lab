@@ -56,3 +56,16 @@ Unzip the download, and run the installer
     sudo make install
 
 and reboot.
+
+## Configure email
+
+Create a file
+
+/home/pi/.DoublePendulum.email
+
+which contains a gmail username and password to be used to send experiment results by email, for example,
+
+    johnsmith
+    greeneggsandspam
+
+(but not those particular values, obviously!)
