@@ -43,16 +43,10 @@ Then, in the Interfaces tab, set Camera to 'enabled'
 
 ## Install the software
 
-Download the software from GitHub at
+Create a clone of the GitHub repository and run the installer script.
 
-<https://github.com/CambridgeEngineering/PartIB-Paper1-Pendulum-Lab>
-
-(use the 'Clone or download' button to download a zip file).
-
-Unzip the download, and run the installer
-
-    unzip PartIB-Paper1-Pendulum-Lab-master.zip
-    cd PartIB-Paper1-Pendulum-Lab-master/src
+    git clone https://github.com/CambridgeEngineering/PartIB-Paper1-Pendulum-Lab.git
+    cd PartIB-Paper1-Pendulum-Lab/src
     sudo make install
 
 and reboot.
