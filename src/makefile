@@ -14,7 +14,11 @@ install:
 
 	install --backup=off --owner=pi DoublePendulum.desktop      /home/pi/Desktop
 
+	install --backup=off --mode=644 shutdownbutton.py           /usr/local/bin/
+
 	install --backup=off --mode=644 pendulumGUI.service         /lib/systemd/system/
+	install --backup=off --mode=644 shutdownbutton.service      /lib/systemd/system/
 
 	systemctl daemon-reload
 	systemctl enable pendulumGUI.service
+	systemctl enable shutdownbutton.service
