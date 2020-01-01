@@ -1,0 +1,9 @@
+[Unit]
+Description=Shutdown RPi on detecting button press
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/shutdownbutton.py
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
