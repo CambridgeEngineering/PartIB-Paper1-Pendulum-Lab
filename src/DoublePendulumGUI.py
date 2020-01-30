@@ -45,7 +45,11 @@ global crsids
 crsids = []
 
 def modeshapes_link():
-	webbrowser.open("https://notebooks.azure.com/tjmull/projects/pendulum-lab")
+	webbrowser.open(
+		"https://nbviewer.jupyter.org/github/" +
+		"CambridgeEngineering/PartIB-Paper1-Pendulum-Lab/" +
+		"blob/master/src/Double_Pendulum_Small_Angle_Analysis.ipynb"
+	)
 
 class graph_area(tk.Frame):
 	def __init__(self, master):
