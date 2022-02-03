@@ -37,6 +37,7 @@ def record_video(video_length, width, height, fps):
 			camera.framerate = fps
 			camera.shutter_speed = 1500
 			camera.iso = 800
+			time.sleep(2.1)
 			camera.start_recording(filename + file_type)
 			camera.wait_recording(video_length)
 			camera.stop_recording()

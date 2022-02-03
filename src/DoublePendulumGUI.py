@@ -540,7 +540,7 @@ The duration of the recorded video can be changed using the duration entry box.\
 		for i in range(5, 0, -1):
 			self.after(700, self.countdown(i))
 			self.update()
-			if i == 2:
+			if i == 5:
 				drop.start()	#start the other thread that calls video_analysis
 		self.after(700, self.countdown('GO!'))
 		self.update_idletasks()
