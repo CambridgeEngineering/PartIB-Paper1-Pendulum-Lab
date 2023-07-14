@@ -23,7 +23,6 @@ except Exception as e:
 from PIL import Image
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 #emailing stuff
 import smtplib
@@ -34,6 +33,7 @@ from email.utils import COMMASPACE, formatdate
 from email import encoders
 
 import matplotlib
+import matplotlib.figure
 matplotlib.use("TkAgg")
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
@@ -58,7 +58,7 @@ class graph_area(tk.Frame):
 		self.w_in = root.winfo_screenwidth()/100			#set the graph dimensions to take up the screen width and half the screen height
 		self.h_in = root.winfo_screenheight()/100			#h_in and w_in are in inches. The conversion factor assumes 100dpi
 		#~ self.h_step_in = master.step.winfo_height()		#this is height of the 'step' frame ... will these work on high def screens???
-		self.fig = plt.figure(figsize=(self.w_in, self.h_in*0.5))
+		self.fig = matplotlib.figure.Figure(figsize=(self.w_in, self.h_in*0.5))
 
 		self.ax1 = self.fig.add_subplot(2,1,1)
 		self.ax2 = self.fig.add_subplot(2,1,2)
@@ -1098,9 +1098,8 @@ Please enter your CRSIDs so that your experimental data can be stored\n')
 		self.master.make_main_frame()
 
 def on_closing():
-	if messagebox.askokcancel("Quit", "Do you want to quit?"):
-		root.destroy()
-		exit()
+    if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        root.destroy()
 
 if __name__ == '__main__':
 	root = tk.Tk()

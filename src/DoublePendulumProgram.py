@@ -5,7 +5,7 @@ try:
 except Exception as e:
 	print(e)
 import os
-import matplotlib.pyplot as plt
+import matplotlib
 import tkinter as tk
 from tkinter import messagebox
 import matplotlib.animation as anim
@@ -551,7 +551,7 @@ def angle_vs_time(total_frames, centre, rotation, cap, fps, show_video, show_gra
 	previous_frame = -1
 	if show_graph:
 
-		fig_anim = plt.figure()
+		fig_anim = matplotlib.figure.Figure()
 		ax1_anim = fig_anim.add_subplot(2,1,1)
 		ax2_anim = fig_anim.add_subplot(2,1,2)
 		ax1_anim.set_xlim([0, total_frames/fps])
@@ -766,7 +766,7 @@ def small_angles(t, a, b, fps=90, view_graph=True):
 
 	if view_graph:
 		#setup graph for fourier
-		fig = plt.figure()
+		fig = matplotlib.figure.Figure()
 		ax1 = fig.add_subplot(2,1,1)
 		ax2 = fig.add_subplot(2,1,2)
 		#~ ax1.set_ylim([-180,180])						#set y limits

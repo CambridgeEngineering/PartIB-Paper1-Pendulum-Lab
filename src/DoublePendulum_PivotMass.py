@@ -1,6 +1,6 @@
 import numpy as np
 from scipy import linalg
-import matplotlib.pyplot as plt
+import matplotlib.figure
 import matplotlib.animation as animation
 import argparse
 import time
@@ -210,7 +210,8 @@ def run(a=1.0, adot=0, ma=1.0, b=0.8, bdot=0, mb=0.8, mp=0, dt=0.02,
 		return alpha, beta, alphadot, betadot
 
 	if anim:
-		fig_anim, ax = plt.subplots()
+		fig_anim = matplotlib.figure.Figure()
+		ax = fig_anim.subplots()
 		ax.set_xlim(p.range())
 		ax.set_ylim(p.range())
 		ax.set_aspect('equal', adjustable='box')
