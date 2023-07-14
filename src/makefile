@@ -1,4 +1,5 @@
 install:
+	apt-get install python3-opencv -y
 	apt-get install python3-matplotlib -y
 	apt-get install python3-scipy -y
 	apt-get install python3-pil -y

@@ -1,10 +1,14 @@
-﻿# Installation Instructions
+# Installation Instructions
 
 ## Install Raspbian
 
 Follow the instructions at
 
-<https://projects.raspberrypi.org/en/projects/noobs-install>
+<https://www.raspberrypi.com/software/>
+
+When the installation process prompts you to install operating system updates,
+skip that step, because the Raspberry Pi won't be able to access a time server
+yet, and the update will fail.
 
 ## Use the CUED time server
 
@@ -24,22 +28,22 @@ and type ctrl+o, ctrl+x to save the file and leave the *nano* editor. Type
 
 and the correct date and time should be shown.
 
-## Install OpenCV
+## Update the operating system
 
-At the time of writing there's no pre-packaged installer for Raspberry Pi, so follow the instructions at
+Give the commands
 
-<https://www.life2coding.com/install-opencv-3-4-0-python-3-raspberry-pi-3/>
+    sudo apt update
+    sudo apt full-upgrade
 
-to build and install *OpenCV* from source.
+When the updates have installed, reboot the Raspberry Pi for good measure.
 
-There's plenty of space on the SD card, so you can start from step 3.
-In Step 9, you *do* need to do the rename step.
+## Enable the legacy camera interface
 
-## Enable the Camera
+From a command window, give the command
 
-Menu => Preferences => Raspberry pi configuration
+    sudo raspi-config
 
-Then, in the Interfaces tab, set Camera to 'enabled'
+choose the "Interface Options" screen, and then enable "Legacy Camera".
 
 ## Install the software
 
@@ -49,7 +53,7 @@ Create a clone of the GitHub repository and run the installer script.
     cd PartIB-Paper1-Pendulum-Lab/src
     sudo make install
 
-and reboot.
+Reboot the Raspberry Pi again.
 
 ## Configure email
 

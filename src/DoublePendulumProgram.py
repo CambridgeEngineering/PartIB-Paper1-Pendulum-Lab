@@ -15,7 +15,7 @@ import PIL.Image, PIL.ImageTk
 
 import matplotlib
 matplotlib.use("TkAgg")
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
 filename = 'Double_pendulum'
 file_type = '.h264'
@@ -795,7 +795,7 @@ def small_angles(t, a, b, fps=90, view_graph=True):
 		canvas = FigureCanvasTkAgg(fig, master=root_small_angle)
 		canvas.get_tk_widget().pack(side='top', fill='both', expand=1)
 
-		toolbar = NavigationToolbar2TkAgg(canvas, root_small_angle)
+		toolbar = NavigationToolbar2Tk(canvas, root_small_angle)
 		toolbar.update()
 		canvas._tkcanvas.pack(side='top', fill='both', expand=1)
 

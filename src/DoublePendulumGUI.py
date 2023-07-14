@@ -35,7 +35,7 @@ from email import encoders
 
 import matplotlib
 matplotlib.use("TkAgg")
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 
 #create globals to store all the lab's data in to be exported at the end... actually not used in this version of the program
 global a_global, b_global, t_global, name_global
@@ -116,7 +116,7 @@ class graph_area(tk.Frame):
 			self.canvas = FigureCanvasTkAgg(fig, master=self)
 			self.canvas.get_tk_widget().pack(side='top', fill='both', expand=True)
 
-			toolbar = NavigationToolbar2TkAgg(self.canvas, self)
+			toolbar = NavigationToolbar2Tk(self.canvas, self)
 			toolbar.update()
 			self.canvas._tkcanvas.pack(side='top', fill='both', expand=1)
 
@@ -1048,7 +1048,7 @@ Please enter your CRSIDs so that your experimental data can be stored\n')
 	def add_crsid(self):
 		self.crsid = self.crsid_entry.get()
 
-		if self.crsid not in self.crsids and self.crsid is not '':
+		if self.crsid not in self.crsids and self.crsid != '':
 			self.crsids.append(self.crsid)
 		self.display_crsids()
 
